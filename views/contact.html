@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/contact.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="contactBox">
+          <div class="contactLinks">
+            <span class="contTitleTop">lorem</span>
+            <h2>Bizimlə əlaqə</h2>
+
+            <div class="links">
+              <div class="link">
+                <span class="contIcon">
+                  <i class="fa-solid fa-at"></i>
+                </span>
+                <a href=""><span>Mail:</span> info@lorem.com</a>
+              </div>
+              <div class="link">
+                <span class="contIcon">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <a href=""><span>Call:</span> +9444564123</a>
+              </div>
+              <div class="link">
+                <span class="contIcon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <a href=""><span>Visit:</span> Baku Yasamal</a>
+              </div>
+            </div>
+          </div>
+          <div class="contactForm">
+            <h3>Mesaj Göndər</h3>
+            <form action="">
+              <div class="contact">
+                <input
+                  class="similar"
+                  type="text"
+                  name="name"
+                  placeholder="Ad"
+                  required
+                />
+                <input
+                  class="similar"
+                  type="email"
+                  name="email"
+                  placeholder="Mail"
+                  required
+                />
+              </div>
+              <div class="contact">
+                <select class="similar" name="services" id="xidmetler" required>
+                  <option value="" selected disabled>
+                    Bir kateqoriya seçin
+                  </option>
+                  <option value="value1">value1</option>
+                  <option value="value2">value2</option>
+                  <option value="value3">value3</option>
+                </select>
+                <select class="similar" name="budget" id="budce" required>
+                  <option value="" selected disabled>Bir məbləğ seçin</option>
+                  <option value="100k">100k</option>
+                  <option value="200k">200k</option>
+                  <option value="300k">300k</option>
+                </select>
+              </div>
+              <div class="contact">
+                <textarea placeholder="Qeydləriniz" class="similar" name="messages" id="qeydler"></textarea>
+              </div>
+              <p class="policyBox">
+                <input type="checkbox" name="policy" id="policy" required />
+                <span
+                  >I am bound by the terms of the service I accept Privacy
+                  Policy</span
+                >
+              </p>
+              <button class="formSubmit" type="submit">Göndər</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/ff1b176afe.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

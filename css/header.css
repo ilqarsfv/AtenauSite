@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s linear;
+}
+
+/* Scroll yukarı çıkarken göster */
+.header-show {
+  top: 0;
+  transition: all 0.5s linear;
+}
+
+/* Scroll aşağı inerken gizle */
+.header-hide {
+  top: -100%;
+}
+
+/* Scroll yapıldığında header siyah olur */
+.header-black {
+  background-color: black;
+}
+
+/* Başlangıçta header şeffaf olur */
+header:not(.header-black) {
+  background-color: transparent;
+}
+
+.container {
+  max-width: 1350px;
+  margin: auto;
+}
+/* logo */
+#logo {
+  width: 15%;
+}
+#logo a {
+  display: inline-block;
+  width: 100%;
+}
+#logo a img {
+  width: 100%;
+}
+
+#menuNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+  margin-right: -100px;
+}
+
+.dropMenu {
+  opacity: 0;
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  width: max-content;
+  background: #fff;
+  line-height: 40px;
+  visibility: hidden;
+  border-left: 5px solid yellow;
+  transform: translate(-50%, 0%);
+  box-shadow: 0px 0px 30px -20px #000;
+}
+.dropMenu::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 5px;
+  background-color: yellow;
+  top: -5px;
+  left: -5px;
+}
+/* .dropMenu.autoFlow {
+    overflow-y: scroll;
+    height: 250px;
+} */
+.dropMenu.visible {
+  visibility: visible;
+  animation: dropVisible 0.2s ease-in-out forwards, visible 0.2s ease-in-out;
+}
+@keyframes dropVisible {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0%);
+  }
+}
+
+.menuLink * {
+  color: #333;
+}
+.menuLink {
+  cursor: pointer;
+  position: relative;
+  padding: 30px 0px;
+}
+.menuLink > span,
+.menuLink > a,
+.menuLink i {
+  color: #fff;
+}
+.menuLink span {
+  display: flex;
+  align-items: center;
+}
+.menuLink i {
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+.dropLink {
+  padding: 10px 20px;
+  transition: all 0.3s linear;
+  position: relative;
+}
+.dropLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+}
+
+.dropLink:hover::after {
+  width: 100%;
+  background-color: yellow;
+}
+
+/* header link button */
+.contButton {
+  display: inline-block;
+  background-color: yellow;
+  padding: 20px;
+  position: relative;
+  color: #000;
+  width: 290px;
+  font-weight: 700;
+  clip-path: polygon(0 0, 98.5% 0%, 92% 100%, 0% 100%);
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+.contButton::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  clip-path: polygon(40% 0, 100% 0%, 100% 100%, 18% 100%);
+  right: 0;
+  top: 0;
+  transition: all 0.3s linear;
+}
+.contButton:hover {
+  background-color: transparent;
+  border-color: yellow;
+  color: #fff;
+}
+.contButton:hover::after {
+  background-color: yellow;
+  width: 30%;
+}
+.contButton:hover i {
+  background-color: transparent;
+  color: #000;
+}
+
+/* header link icon */
+.contButton i {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background: #000;
+  color: #fff;
+  padding: 20px 25px;
+  clip-path: polygon(30% 0%, 91% 0%, 60% 100%, 0% 100%);
+  transition: all 0.3s linear;
+}
+#mobMenuNav {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  header {
+    position: inherit;
+  }
+  #mobMenuNav {
+    display: block;
+  }
+  #mobMenuBox {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #menuNav {
+    display: none;
+  }
+  #mobNavLogo {
+    width: 40%;
+  }
+  #mobNavLogo img {
+    width: 100%;
+  }
+
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 3;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 3;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 3;
+  }
+  .open .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 3;
+  }
+  .open .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 3;
+  }
+  .open .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 3;
+  }
+  #mobileMenuHam svg {
+    fill: white;
+    width: 50px;
+    height: 50px;
+  }
+  #mobNavLinks {
+    position: absolute;
+    padding: 20px;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    bottom: 0;
+    background: black;
+    z-index: 10;
+    width: 100%;
+    transition: all .3s ease-in-out;
+  }
+  #mobNavLinks.openLinks {
+    left: 0;
+  }
+  #mobNavLinksClose {
+    position: absolute;
+    font-size: 50px;
+    color: #fff;
+    right: 8%;
+    top: 3%;
+  }
+  #navigationLogo {
+    width: 70%;
+    padding-top: 60px;
+  }
+  #navigationLogo img {
+    width: 100%;
+  }
+  #mobNavigations {
+    margin-top: 40px;
+  }
+  .mobNavigationsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .mobNavigationsList>li {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff5;
+    position: relative;
+  }
+  .mobNavigationsList>li>a {
+    color: #fff;  
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  .mobNavigationsList>li>i {
+    display: none;
+    position: absolute;
+    color: #fff;
+    right: 0;
+    top: 5px;
+  }
+  .fa-angle-down {
+    display: none;
+  }
+  .otherNavs {
+    display: none;
+    padding: 20px;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .otherNavs a {
+    font-size: 18px;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  .otherNavs.open {
+    display: flex;
+  }
+  .fa-angle-right {
+    display: block !important;
+  }
+  .fa-angle-down.active {
+    display: inline-block;
+  }
+  .fa-angle-right.close {
+    display: none !important;
+  }
+}

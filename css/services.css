@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+.container {
+  max-width: 1350px;
+  margin: auto;
+}
+#serviceSlider {
+  margin-top: 60px;
+  position: relative;
+}
+.articleTitle {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subtitle {
+  padding-left: 45px;
+  padding-right: 45px;
+  position: relative;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.6;
+  color: #a3a3a3;
+}
+
+.articleTop::before {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 56px;
+  height: 13px;
+  background: url("/img/carbefore.png");
+}
+.articleTitle h2 {
+  font-size: 50px;
+}
+
+/* slider */
+
+#serviceSlider .swiper-slide {
+  position: relative;
+  height: 450px;
+  width: 400px !important;
+}
+#serviceSlider .slideImg {
+    overflow: hidden;
+    height: 100%;
+}
+#serviceSlider .swiper-slide img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+
+#serviceSlider .swiper-slide:hover img {
+    transform: scale(1.2);
+}
+#serviceSlider .swiper-pagination {
+    bottom: -60px !important;
+}
+#serviceSlider .swiper-pagination span {
+    width: 12px;
+    height: 12px;
+}   
+.swiper-wrapper {
+    padding-left: 30px;
+}
+.swiper-slide-content {
+    position: absolute;
+    left: -25px;
+    right: 50px;
+    bottom: 28px;
+    padding: 25px 70px 25px 42px;
+    transition: all 300ms ease;
+    z-index: 3;
+    background-color: #fff;
+}
+.swiper-slide * {
+    transition: all .4s ease-in-out;
+}
+.swiper-slide-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color:#ff6d2e ;
+    z-index: -1;
+    transition: all .4s ease-in-out;
+}
+.swiper-slide:hover .swiper-slide-content *{
+    color: #fff;
+}
+.swiper-slide:hover .swiper-slide-content::before{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide-content .topIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    background-color: #ff6d2e;
+    transition: all 300ms ease;
+    z-index: 1;
+}
+.topIcon i {
+    position: relative;
+    z-index: 2;
+}
+.topIcon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: #f44e07;
+    transition: all .3s ease-in-out;
+    z-index: 0;
+}
+.swiper-slide:hover .topIcon::before {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide-content .titleLink {
+    padding-left: 4rem;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+}
+.swiper-slide-content p {
+    position: relative;
+    font-size: 14px;
+    line-height: 26px;
+    padding-top: 50px;
+    margin-bottom: 0;
+    color: #929292;
+}
+.swiper-slide-content .btmIcon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    background-color: #04223e;
+    color: #fff;
+}

@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+.proctSliderTitle {
+  margin-bottom: 60px;
+}
+.articleTitle {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.articleTitle h2 {
+  font-size: 50px;
+}
+.prItem {
+  height: 100%;
+  overflow: hidden;
+}
+.prItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  opacity: 1;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 500ms linear;
+  z-index: 1;
+}
+.prItem::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  top: 50%;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 600ms linear;
+}
+.prItem:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+.prItem:hover::after {
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.articleTop::before {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 56px;
+  height: 13px;
+  background: url("/img/carbefore.png");
+}
+.subtitle {
+  padding-left: 45px;
+  padding-right: 45px;
+  position: relative;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.6;
+  color: #a3a3a3;
+}
+#projectSlider .swiper-slide {
+  height: 590px;
+}
+#projectSlider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+}
+.prItem:hover img {
+    transform: scale(1.1);
+}
+#projectSlider .swiper-pagination {
+  bottom: -50px !important;
+}
+#projectSlider .swiper-pagination span {
+  width: 12px;
+  height: 12px;
+}
+.swiper-pagination-bullet {
+  background-color: #ed3237 !important;
+}
+.projectContent {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 70px;
+  max-width: 329px;
+  background-color: #fff;
+  z-index: 3;
+}
+.projectContent::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #ed3237;
+  transition: all 300ms ease;
+  content: "";
+}
+.projectContent::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 19%;
+  width: -webkit-fill-available;
+  height: 8px;
+  background-color: #ff6d2e;
+  z-index: -1;
+  overflow: hidden;
+}
+.prItem:hover .projectContent::before {
+  width: 100%;
+}
+.projectDirectLink {
+  position: relative;
+  padding: 20px 30px 15px;
+  display: inline-flex;
+  color: #000;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.prItem:hover .projectDirectLink {
+  color: #fff;
+}
+.projectLinkOther {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 22px;
+  display: block;
+  color: #fff;
+  text-align: center;
+  background-color: #ff6d2e;
+}
+#offsetWrap {
+  margin: 0px -320px 0px -320px;
+}
+#prSlides {
+  overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+  .articleTitle h2 {
+    font-size: 2rem;
+  }
+  #projectSlider .swiper-slide {
+    height: 400px;
+  }
+  #projectSlider .swiper-pagination {
+    bottom: 20px !important;
+  }
+  .projectContent {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    box-shadow: 0px 0px 10px #0005;
+  }
+  .projectLinkOther {
+    right: 0px;
+  }
+  .swiper {
+    padding: 0 15px !important;
+  }
+}

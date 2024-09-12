@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+
+    <link rel="stylesheet" href="../css/slider.css" />
+  </head>
+  <body>
+    <div id="slider">
+      <div id="sliderWrapper">
+        <div class="sliderItem active">
+          <img src="../img/slider1.jpg" alt="" />
+          <div class="slideInfo">
+            <h2>Lorem ipsum dolor</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+              amet laborum facere exercitationem reiciendis harum reprehenderit
+              dolorum expedita vero a?
+            </p>
+            <a href="#" class="slideLink">
+              Lorem ipsum
+              <i class="fa-solid fa-angles-right"></i>
+            </a>
+            </div>
+          <div class="bigClip"></div>
+          <div class="smallClip"></div>
+          
+        </div>
+        <div class="sliderItem">
+          <img src="../img/slider2.jpg" alt="" />
+          <div class="slideInfo">
+            <h2>Lorem ipsum dolor 2</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+              amet laborum facere exercitationem reiciendis harum reprehenderit
+              dolorum expedita vero a?
+            </p>
+            <a href="#" class="slideLink">
+              Lorem ipsum
+              <i class="fa-solid fa-angles-right"></i>
+            </a>
+          </div>
+          <div class="bigClip"></div>
+          <div class="smallClip"></div>
+        </div>
+        <div class="sliderItem">
+          <img src="../img/slider3.jpg" alt="" />
+          <div class="slideInfo">
+            <h2>Lorem ipsum dolor 3</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+              amet laborum facere exercitationem reiciendis harum reprehenderit
+              dolorum expedita vero a?
+            </p>
+            <a href="#" class="slideLink">
+              Lorem ipsum
+              <i class="fa-solid fa-angles-right"></i>
+            </a>
+          </div>
+          <div class="bigClip"></div>
+          <div class="smallClip"></div>
+        </div>
+      </div>
+      <div class="sliderArrowsBox">
+        <div class="customShape">
+            <div onclick="slide('prev')" class="slideArrow" id="slideLeft"><i class="fa-solid fa-angles-left"></i></div>
+        </div>
+        <div class="customShape">
+            <div onclick="slide('next')" class="slideArrow" id="slideRight"><i class="fa-solid fa-angles-right"></i></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/ff1b176afe.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/slider.js"></script>
+  </body>
+</html>
