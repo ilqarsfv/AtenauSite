@@ -1294,9 +1294,20 @@ header:not(.header-black) {
   color: var(--color-text);
 }
 .contactLinks h2 {
+  position: relative;
   margin: 0px 0px 40px 0px;
   font-size: 4rem;
   color: var(--color-text);
+}
+.contactLinks h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70%;
+  height: 30px;
+  background-color: #ccd7e3;
+  z-index: -1;
 }
 .contactBox {
   display: flex;
