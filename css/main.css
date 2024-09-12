@@ -1307,6 +1307,8 @@ header:not(.header-black) {
 }
 .links {
   padding: 44px 32px 28px 40px;
+  background: #0001;
+    border-radius: 15px;
 }
 .link {
   display: flex;
