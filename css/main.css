@@ -485,7 +485,9 @@ header:not(.header-black) {
   }
 }
 /* company about */
-
+#aboutSection {
+  margin-top: 30px;
+}
 #aboutContents {
   display: flex;
   position: relative;
@@ -1949,6 +1951,7 @@ select {
   }
 
   /* about mobile */
+  
   #aboutContents {
     flex-direction: column;
     padding: 0rem 10px;
