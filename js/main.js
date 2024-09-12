@@ -35,7 +35,6 @@ window.addEventListener("scroll", () => {
   lastScrollPosition = currentScrollPosition;
 });
 
-
 menuLink.forEach((element) => {
   element.onmouseover = () => {
     if (element && element.querySelector(".dropMenu")) {
@@ -73,11 +72,10 @@ closeModal.onclick = () => {
   whyVideoBox.classList.remove("visible");
 };
 window.onclick = (e) => {
-  if (e.target===whyVideoBox) {
+  if (e.target === whyVideoBox) {
     whyVideoBox.classList.remove("visible");
   }
 };
-
 
 // services js
 const swiper = new Swiper("#serviceSlider .swiper", {
@@ -86,28 +84,28 @@ const swiper = new Swiper("#serviceSlider .swiper", {
   loop: true,
   slidesPerView: 3,
   pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
+    el: ".swiper-pagination",
+    type: "bullets",
     clickable: true,
   },
   breakpoints: {
     // when window width is >= 320px
     320: {
       slidesPerView: 1,
-      spaceBetween: 50
+      spaceBetween: 50,
     },
     // when window width is >= 480px
     480: {
       slidesPerView: 1,
-      spaceBetween: 50
+      spaceBetween: 50,
     },
     // when window width is >= 640px
     640: {
       slidesPerView: 3,
-      spaceBetween: 50
-    }
-  }
-}); 
+      spaceBetween: 50,
+    },
+  },
+});
 
 // projects slider
 const swiper2 = new Swiper("#projectSlider .swiper", {
@@ -116,8 +114,8 @@ const swiper2 = new Swiper("#projectSlider .swiper", {
   centeredSlides: false,
   spaceBetween: 30,
   pagination: {
-    el: '.swiper-pagination-2',
-    type: 'bullets',
+    el: ".swiper-pagination-2",
+    type: "bullets",
     clickable: true,
   },
   breakpoints: {
@@ -132,7 +130,6 @@ const swiper2 = new Swiper("#projectSlider .swiper", {
     },
   },
 });
-
 
 // Galleries
 const gallery = document.querySelectorAll(".gallery");
@@ -211,10 +208,10 @@ modalItem.onclick = function (event) {
 
 // modalRightClicked
 modalRightIcon.onclick = () => {
-  gallery.forEach(gallery => {
+  gallery.forEach((gallery) => {
     let galleryItems = Array.from(gallery.querySelectorAll(".galleryItem"));
-    let act = galleryItems.find(el => el.classList.contains("active"));
-    
+    let act = galleryItems.find((el) => el.classList.contains("active"));
+
     if (act) {
       modalItem.innerHTML = "";
       let nextElem = act.nextElementSibling || galleryItems[0];
@@ -227,13 +224,14 @@ modalRightIcon.onclick = () => {
 
 // modalLeftClicked
 modalLeftIcon.onclick = () => {
-  gallery.forEach(el => {
+  gallery.forEach((el) => {
     if (el.classList.contains("active")) {
       let items = Array.from(el.querySelectorAll(".galleryItem"));
-      let activeItem = items.find(item => item.classList.contains("active"));
-      
+      let activeItem = items.find((item) => item.classList.contains("active"));
+
       if (activeItem) {
-        let prevElem = activeItem.previousElementSibling || items[items.length - 1];
+        let prevElem =
+          activeItem.previousElementSibling || items[items.length - 1];
         activeItem.classList.remove("active");
         prevElem.classList.add("active");
         modalItem.innerHTML = "";
@@ -245,12 +243,11 @@ modalLeftIcon.onclick = () => {
 
 // sortGalleriesClick
 
-const galleryBars = document.querySelector(".galleryBars")
-const galleryNav = document.querySelector("#galleryNav")
-galleryBars.onclick = () =>{
-  galleryNav.classList.toggle("active")
-}
-
+const galleryBars = document.querySelector(".galleryBars");
+const galleryNav = document.querySelector("#galleryNav");
+galleryBars.onclick = () => {
+  galleryNav.classList.toggle("active");
+};
 
 // blogs
 const blogs = document.querySelectorAll(".blog");
@@ -265,13 +262,12 @@ blogs.forEach((item) => {
   item.addEventListener("mousemove", (event) => {
     const yValue = calcValue(event.y, window.innerHeight);
     const xValue = calcValue(event.x, window.innerWidth);
-    
+
     item.style.transform = `rotateX(${xValue}deg) rotateY(${yValue}deg)`;
-    
   });
-  item.addEventListener("mouseout",(event)=>{
+  item.addEventListener("mouseout", (event) => {
     item.style.transform = `rotateX(0deg) rotateY(0deg)`;
-  })
+  });
 });
 
 // headerMobile
@@ -284,7 +280,7 @@ const rightIcons = document.querySelectorAll(".fa-angle-right");
 const otherMobNavs = document.querySelectorAll(".otherNavs");
 
 const toggleClass = (elements, className, action) => {
-  elements.forEach(e => e.classList[action](className));
+  elements.forEach((e) => e.classList[action](className));
 };
 
 mobileMenuHam.onclick = function () {
@@ -311,3 +307,44 @@ mobNavigations.forEach((el) => {
     }
   };
 });
+
+// aboutcounters
+const aboutCounters = document.getElementById("aboutCounters");
+const counters = document.querySelectorAll(".count");
+let hasRun = false;
+
+window.addEventListener("scroll", function () {
+  const aboutTop = aboutCounters.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (aboutTop < windowHeight && aboutTop >= 0) {
+    if (!hasRun) {
+      counter();
+      hasRun = true;
+    }
+  } else {
+    hasRun = false;
+  }
+});
+
+function counter() {
+  counters.forEach((el) => {
+
+    let target = parseInt(el.innerHTML);
+    let count = 0;
+
+    let duration = 2000;
+    let stepTime = Math.abs(Math.floor(duration / target));
+
+    el.innerHTML = count;
+
+    let int = setInterval(() => {
+      if (count < target) {
+        count += 1;
+        el.innerHTML = count;
+      } else {
+        clearInterval(int);
+      }
+    }, stepTime);
+  });
+}
